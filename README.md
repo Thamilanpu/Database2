@@ -114,7 +114,7 @@ customers>
 **6.Insert one document into the customerdetails collection**
 ```
 customers> 
-db.customerdetails.insertOne({ "name": "Sajee", "age": "24", "gender": "Male", "city": "Toronto" }) { acknowledged: true, insertedId: ObjectId("654cb000f41d0bb8c74d2fba") }
+db.customerdetails.insertOne({ "name": "Mariyamma", "age": "24", "gender": "Female", "city": "Srilanka" }) { acknowledged: true, insertedId: ObjectId("654cb000f41d0bb8c74d2fba") }
 customers>
 ```
 **7. Update city=SriLanka to John.**
@@ -185,10 +185,10 @@ customers> db.customerdetails.find({"city": {$ne: "Los Angeles" } })
   },
   {
     _id: ObjectId("654cb000f41d0bb8c74d2fba"),
-    name: 'Sajee',
+    name: 'Mariyamma',
     age: '24',
-    gender: 'Male',
-    city: 'Toronto'
+    gender: 'Female',
+    city: 'Srilanka'
   }
 ]
 customers>
@@ -236,10 +236,10 @@ db.customerdetails.find({ "age": {$lt:("25")},"gender":"Male" })
 [
   {
     _id: ObjectId("654cb000f41d0bb8c74d2fba"),
-    name: 'Sajee',
+    name: 'ariyamma',
     age: '24',
-    gender: 'Male',
-    city: 'Toronto'
+    gender: 'Female',
+    city: 'Srilanka'
   }
 ]
 customers>
@@ -284,9 +284,12 @@ customers> db.customerdetails.find({ "age": {$lt:("30"),$gt:("25")},"gender":"Ma
     city: 'Toronto'
   }
 ]
-14.Find a customer who is lesser than or equal to 23.
+customers>
 ```
-customers> db.customerdetails.find({ "age": {$lte:("23")} })
+**14.Find a customer who is lesser than or equal to 23.**
+```
+customers>
+ db.customerdetails.find({ "age": {$lte:("23")} })
 [
   {
     _id: ObjectId("654ca6a8f41d0bb8c74d2fb2"),
@@ -303,4 +306,5 @@ customers> db.customerdetails.find({ "age": {$lte:("23")} })
     city: 'Los Angeles'
   }
 ]
+customers>
 ```
