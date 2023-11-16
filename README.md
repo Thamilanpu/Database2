@@ -2,19 +2,19 @@
 **MongoDB Exercise 02**
 
 
-**1.Create a Database called movies.**
+**1. Create a Database called customers.**
 
 ```test> use customers
 switched to db customers
 customers> 
 ```
-**2.Create a collection called customerdetails.**
+**2. Create a collection called customerdetails..**
 ```
 customers> db.createCollection("customerdetails")
 { ok: 1 }
 customers>
 ```
-**3. Insert all documents into the collection named customerdetails.**
+**3. Insert all documents into the collection named   customerdetails.**
 ```
 customers> db.customerdetails.insertMany([ { "name": "John", "age": "25", "gender": "Male", "city": "New York" }, { "name": "Emily", "age": "22", "gender": "Female", "city": "London" }, { "name": "Daniel", "age": "28", "gender": "Male", "city": "Sydney" }, { "name": "Sophia", "age": "24", "gender": "Female", "city": "Paris" }, { "name": "William", "age": "26", "gender": "Male", "city": "Chicago" }, { "name": "Olivia", "age": "23", "gender": "Female", "city": "Los Angeles" }, { "name": "Benjamin", "age": "27", "gender": "Male", "city": "Toronto" }, { "name": "Mila", "age": "29", "gender": "Female", "city": "Berlin" }, { "name": "James", "age": "30", "gender": "Male", "city": "Tokyo" }])
 {
@@ -34,7 +34,7 @@ customers> db.customerdetails.insertMany([ { "name": "John", "age": "25", "gende
 customers>
 ```
 
-**4. Retrieve all documents from the collection and sort the results by the “age” field in ascending order.**
+**4. Retrieve all documents from the collection and sort the results by the “age” field    in ascending order.**
 ```
 customers> db.customerdetails.find().sort({ "age": 1 }).pretty()
 [
@@ -105,13 +105,13 @@ customers> db.customerdetails.find().sort({ "age": 1 }).pretty()
 customers>
 ```
 
-**5. Count the number of females.**
+**5. Count the number of females. **
 ```
 customers> db.customerdetails.countDocuments({ "gender": "Female" })
 4
 customers>
 ```
-**6.Insert one document into the customerdetails collection**
+**6.Insert one document into the customerdetails collection.**
 ```
 customers> 
 db.customerdetails.insertOne({ "name": "Mariyamma", "age": "24", "gender": "Female", "city": "Srilanka" }) { acknowledged: true, insertedId: ObjectId("654cb000f41d0bb8c74d2fba") }
@@ -130,7 +130,8 @@ customers>
 db.customerdetails.remove({ "city":"Tokyo" }) DeprecationWarning: Collection.remove() is deprecated. Use deleteOne, deleteMany, findOneAndDelete, or bulkWrite. { acknowledged: true, deletedCount: 1 }
 customers>
 ```
-**9.  Find customers not from Los Angeles.**
+**9. Find customers not from Los Angeles.
+**
 ```
 customers> db.customerdetails.find({"city": {$ne: "Los Angeles" } })
 [
